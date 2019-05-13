@@ -1,0 +1,23 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "A Amazon-like application that allows user to purchase products, add products and add inventory",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bryceacampbell/friend-finder.git"
+  },
+  "author": "Bryce Campbell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bryceacampbell/friend-finder/issues"
+  },
+  "homepage": "https://github.com/Bryceacampbell/friend-finder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
