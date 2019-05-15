@@ -12,27 +12,17 @@ module.exports = function (app) {
         
         friendsData.push(newFriend);
 
-        console.log(newFriend.totalScore);
-
-        let totalScores = [];
+        let comparedScoresArray = [];
 
         for (let i = 0; i < friendsData.length; i++) {
 
-            let totalScore = friendsData[i].totalScore;
-            totalScores.push(totalScore);
-
+            let comparedScore = newFriend.totalScore - friendsData[i].totalScore;
+            comparedScoresArray.push(Math.abs(comparedScore));
         }
-        console.log("Total scores array: " + totalScores);
+        console.log("compared scores array: " + comparedScoresArray);
 
-        solve(newFriend.totalScore, totalScores);
+        console.log(Math.min.apply(null, comparedScoresArray));
 
     });
 };
 
-function solve(num1, array) {
-    
-    for(let i = 0; i < array.length; i++) {
-        let comparedScore = array[i] - num1;
-        console.log(comparedScore);
-    }
-}
