@@ -7,13 +7,14 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <div class="container">
 
-        <h2>Survey Questions</h2>
+        <h2 id="survey-header">Survey Questions</h2>
         <hr>
         <h3><strong>About You</strong></h3>
         <h4>Name (Required)</h4>
@@ -24,7 +25,7 @@
         <hr>
         <!--========================================================================================================================-->
         <h3><strong>Question 1</strong></h3>
-        <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+        <h4>I am interested in politics.</h4>
         <select class="form-control" id="q1">
             <option value=""> [ Select an option ] </option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -36,7 +37,7 @@
 
         <!--========================================================================================================================-->
         <h3><strong>Question 2</strong></h3>
-        <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+        <h4>I am an adventurous individual who likes the outdoors.</h4>
         <select class="form-control" id="q2">
             <option value=""> [ Select an option ] </option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -47,7 +48,7 @@
         </select>
         <!--========================================================================================================================-->
         <h3><strong>Question 3</strong></h3>
-        <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+        <h4>You prefer to go to a club rather than watching a movie at home.</h4>
         <select class="form-control" id="q3">
             <option value=""> [ Select an option ] </option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -59,7 +60,7 @@
 
         <!--========================================================================================================================-->
         <h3><strong>Question 4</strong></h3>
-        <h4>You rarely do something just out of sheer curiosity.</h4>
+        <h4>You would do anything for the closest of friends.</h4>
         <select class="form-control" id="q4">
             <option value=""> [ Select an option ] </option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -71,7 +72,7 @@
 
         <!--========================================================================================================================-->
         <h3><strong>Question 5</strong></h3>
-        <h4>People can rarely upset you.</h4>
+        <h4>You enjoy being around new people.</h4>
         <select class="form-control" id="q5">
             <option value=""> [ Select an option ] </option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -107,7 +108,7 @@
 
         <!--========================================================================================================================-->
         <h3><strong>Question 8</strong></h3>
-        <h4>You rarely get carried away by fantasies and ideas.</h4>
+        <h4>You are focused and have your life somewhat "figured out".</h4>
         <select class="form-control" id="q8">
             <option value=""> [ Select an option ] </option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -165,7 +166,7 @@
                     <img id="match-img" src="" alt="">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn" data-dismiss="modal">Close</button>
                 </div>
             </div>
 
@@ -217,12 +218,14 @@
                     totalScore: scores.reduce((accumulator, currentValue) => accumulator + currentValue)
                 };
 
-                console.log(userData);
+                // console.log(userData);
 
                 $.post("/api/friends", userData, function (data) {
 
-                    $("#match-name").text(data.name);
-                    $("#match-img").attr("src", data.photo);
+                    $("#match-name").text(data.matchName);
+                    $("#match-img").attr("src", data.matchImage);
+
+                    console.log(data.matchImage);
 
                     $("#results-modal").modal("toggle");
 

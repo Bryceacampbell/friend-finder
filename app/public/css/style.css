@@ -1,0 +1,31 @@
+body {
+    background: #59ACFF;
+}
+.container {
+    background: #A3B7CC;
+    padding: 50px;
+    
+}
+#survey-header {
+    color: #ffffff;
+    text-align: center;
+    font-size: 48px;
+}
+h3 {
+    color: #ffffff;
+}
+.btn {
+    background: #006EF4;
+}
+#home-container h1 {
+    color: #ffffff;
+}
+#home-container  {
+    text-align: center
+}
+.modal-body {
+    text-align: center;
+}
+.modal-footer .btn {
+    color: #ffffff;
+}
